@@ -43,13 +43,13 @@ else:
     else:
         print(' None')
 
-    # dom = conn.lookupByID(0)
-    # if dom == None:
-    #     print('Failed to find the domain ')
-    #     exit(1)
-    # cpu_stats = dom.getCPUStats(False)
-    # for (i, cpu) in enumerate(cpu_stats):
-    #     print('CPU ' + str(i) + ' Time: ' + str(cpu['cpu_time'] / 1000000000.))
+    dom = conn.lookupByName('instance-0000000a')
+    if dom == None:
+        print('Failed to find the domain ')
+        exit(1)
+    cpu_stats = dom.getCPUStats(False)
+    for (i, cpu) in enumerate(cpu_stats):
+        print('CPU ' + str(i) + ' Time: ' + str(cpu['cpu_time'] / 1000000000.))
 
 conn.close()
 exit(0)
