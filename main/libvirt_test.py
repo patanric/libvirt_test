@@ -36,6 +36,7 @@ else:
     print("iowait: " + str(stats['iowait']))
 
     print conn.listNetworks()
+    print conn.listAllDomains()
 
     dom = conn.lookupByID(0)
     if dom == None:
