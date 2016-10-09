@@ -27,6 +27,7 @@ else:
     print conn.getHostname()
     print conn.getMaxVcpus(None)
     print conn.getLibVersion()
+    
     print conn.getURI()
 
     stats = conn.getCPUStats(0)
