@@ -51,5 +51,10 @@ else:
     for (i, cpu) in enumerate(cpu_stats):
         print('CPU ' + str(i) + ' Time: ' + str(cpu['cpu_time'] / 1000000000.))
 
+    stats = dom.memoryStats()
+    print('memory used:')
+    for name in stats:
+        print(' ' + str(stats[name]) + ' (' + name + ')')
+
 conn.close()
 exit(0)
