@@ -43,7 +43,18 @@ else:
     else:
         print(' None')
 
-    dom = conn.lookupByName('instance-0000000a')
+    domainIDs = conn.listDomainsID()
+    if domainIDs == None:
+        print('Failed to get a list of domain IDs')
+
+    print("Active domain IDs:")
+    if len(domainIDs) == 0:
+        print(' None')
+    else:
+        for domainID in domainIDs:
+            print(' ' + str(domainID))
+
+    dom = conn.lookupByID(domainIDs[0])
     if dom == None:
         print('Failed to find the domain ')
         exit(1)
